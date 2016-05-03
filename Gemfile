@@ -47,7 +47,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'coffee-script-source', '1.8.0'
 gem 'rails_12factor', group: :production
-gem 'pg', group: :production
+gem 'pg','0.17.1', group: :production
 ruby '2.1.6'
 gem 'carrierwave'
 gem "fog"
