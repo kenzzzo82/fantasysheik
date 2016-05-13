@@ -1,0 +1,32 @@
+.jumbotron {
+  background-color: #e7ffe7;
+  border: 1px solid #09310f;
+  h2 {color: #09310f;
+  font-weight: bold;
+  }
+}
+
+.navbar-default {
+	.container-fluid {
+	  background-color: #228b22;
+	  .navbar-nav > li > a {
+	    color: #ffffff;
+	    font-size: 16px;
+	    font-weight: bold;
+	  }
+	  .navbar-brand {
+	    color: black;
+	    font-size: 30px;
+	    font-weight: bold;
+	    font-family: Copperplate / Copperplate Gothic Light;
+	 	text-shadow: 2px 0 0 #e7ffe7, -2px 0 0 #e7ffe7, 0 2px 0 #e7ffe7, 0 -2px 0 #e7ffe7, 1px 1px #e7ffe7, -1px -1px 0 #e7ffe7, 1px -1px 0 #e7ffe7, -1px 1px 0 #e7ffe7;
+
+
+
+		}
+	}
+}
+
+.container-fluid {
+	padding: 10px 120px;
+}
