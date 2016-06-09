@@ -69,6 +69,6 @@ class FightsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def fight_params
-      params.require(:fight).permit(:fighter1, :fighter2, :favorite, :points)
+      params.require(:fight).permit(:fighter1, :fighter2, :favorite, :points,:event_id)
     end
 end
