@@ -1,0 +1,33 @@
+<%= form_for(@fight) do |f| %>
+  <% if @fight.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fight.errors.count, "error") %> prohibited this fight from being saved:</h2>
+
+      <ul>
+      <% @fight.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :fighter1 %>
+    <%= f.text_area :fighter1, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :fighter2 %>
+    <%= f.text_area :fighter2, class: "form-control"  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :favorite %>
+    <%= f.text_area :favorite, class: "form-control"  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :points %>
+    <%= f.number_field :points, class: "form-control"  %>
+  </div>
+  <div class="form-group">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

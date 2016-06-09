@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fighter1: MyText
+  fighter2: MyText
+  favorite: MyText
+  points: 1
+
+two:
+  fighter1: MyText
+  fighter2: MyText
+  favorite: MyText
+  points: 1
