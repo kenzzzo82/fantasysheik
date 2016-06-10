@@ -1,6 +1,8 @@
 class FightsController < ApplicationController
   before_action :set_fight, only: [:show, :edit, :update, :destroy]
 
+  autocomplete :fighter, :name
+
   # GET /fights
   # GET /fights.json
   def index
@@ -69,6 +71,6 @@ class FightsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def fight_params
-      params.require(:fight).permit(:fighter1, :fighter2, :favorite, :points,:event_id)
+      params.require(:fight).permit(:fighter1, :fighter2, :favorite, :points,:event_id, :fighter1_id, :fighter2_id)
     end
 end

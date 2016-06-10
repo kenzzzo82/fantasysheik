@@ -1,0 +1,49 @@
+<%= form_for(@fighter) do |f| %>
+  <% if @fighter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fighter.errors.count, "error") %> prohibited this fighter from being saved:</h2>
+
+      <ul>
+      <% @fighter.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br>
+    <%= f.number_field :weight , class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :height %><br>
+    <%= f.text_field :height, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :wins %><br>
+    <%= f.number_field :wins, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :losses %><br>
+    <%= f.number_field :losses, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :kos %><br>
+    <%= f.number_field :kos, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :submissions %><br>
+    <%= f.number_field :submissions, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :decisions %><br>
+    <%= f.number_field :decisions, class: "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

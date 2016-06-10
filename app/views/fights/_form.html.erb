@@ -13,7 +13,7 @@
 
   <div class="form-group">
     <%= f.label :fighter1 %>
-    <%= f.text_area :fighter1, class: "form-control" %>
+    <%= f.autocomplete_field :fighter1, autocomplete_fighter_name_fights_path, :id => :fighter1_id  %>
   </div>
   <div class="form-group">
     <%= f.label :fighter2 %>
