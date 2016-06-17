@@ -18,7 +18,9 @@
   </div>
   <div class="form-group">
     <%= f.label :fighter2 %>
-    <%= f.autocomplete_field :fighter2, autocomplete_fighter_name_fights_path, :update_elements => {:id => "#fight_fighter2_id" }, class: "form-control" %>
+    <%= f.autocomplete_field :fighter2, autocomplete_fighter_name_fights_path, :update_elements => {:id => "#fight_fighter2_id" }, 
+    class: "form-control" %>
+    <%= f.hidden_field :fighter2_id %>
   </div>
   <div class="form-group">
     <%= f.label :favorite %>
