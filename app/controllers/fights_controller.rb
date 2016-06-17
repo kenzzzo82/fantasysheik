@@ -2,7 +2,6 @@ class FightsController < ApplicationController
   before_action :set_fight, only: [:show, :edit, :update, :destroy]
 
   autocomplete :fighter, :name
-
   # GET /fights
   # GET /fights.json
   def index
