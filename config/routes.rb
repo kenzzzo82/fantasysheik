@@ -1,14 +1,17 @@
 Rails.application.routes.draw do
   resources :fighters
-  resources :fights do
-      get :autocomplete_fighter_name, :on => :collection
-  end
-  
+
   devise_for :users
   get 'pages/home'
 
-  resources :events
-  resources :events
+
+  resources :events do
+      resources :fights do
+        get :autocomplete_fighter_name, :on => :collection
+  end
+end
+  
+
   get 'pages/about'
 
   get 'pages/contact'

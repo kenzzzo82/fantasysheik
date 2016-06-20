@@ -19,5 +19,6 @@
   <%= @event.date %>
 </p>
 
-<%= link_to 'Edit', edit_event_path(@event),class: "btn btn-link" %> |
+<%= link_to "Add a fight", new_event_fight_path(@event), class: "btn btn-primary" %>
+<%= link_to 'Edit', edit_event_path(@event),class: "btn btn-link" %>
 <%= link_to 'Back', events_path,class: "btn btn-link" %>

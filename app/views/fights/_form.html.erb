@@ -1,4 +1,4 @@
-<%= form_for(@fight) do |f| %>
+<%= form_for([@event ,@fight]) do |f| %>
   <% if @fight.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@fight.errors.count, "error") %> prohibited this fight from being saved:</h2>
@@ -13,18 +13,18 @@
 
   <div class="form-group">
     <%= f.label :fighter1 %>
-    <%= f.autocomplete_field :fighter1, autocomplete_fighter_name_fights_path, :update_elements => {:id => "#fight_fighter1_id" } , class: "form-control" %>
+    <%= f.autocomplete_field :fighter1, autocomplete_fighter_name_event_fights_path, :update_elements => {:id => "#fight_fighter1_id" } , class: "form-control" %>
     <%= f.hidden_field :fighter1_id %>
   </div>
   <div class="form-group">
     <%= f.label :fighter2 %>
-    <%= f.autocomplete_field :fighter2, autocomplete_fighter_name_fights_path, :update_elements => {:id => "#fight_fighter2_id" }, 
+    <%= f.autocomplete_field :fighter2, autocomplete_fighter_name_event_fights_path, :update_elements => {:id => "#fight_fighter2_id" }, 
     class: "form-control" %>
     <%= f.hidden_field :fighter2_id %>
   </div>
   <div class="form-group">
     <%= f.label :favorite %>
-    <%= f.autocomplete_field :favorite, autocomplete_fighter_name_fights_path, class: "form-control" %>
+    <%= f.autocomplete_field :favorite, autocomplete_fighter_name_event_fights_path, class: "form-control" %>
   </div>
   <div class="form-group">
     <%= f.label :points %>

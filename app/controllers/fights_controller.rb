@@ -1,6 +1,6 @@
 class FightsController < ApplicationController
   before_action :set_fight, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_event
   autocomplete :fighter, :name
   # GET /fights
   # GET /fights.json
@@ -26,10 +26,11 @@ class FightsController < ApplicationController
   # POST /fights.json
   def create
     @fight = Fight.new(fight_params)
+    @fight.event_id = @event.id
 
     respond_to do |format|
       if @fight.save
-        format.html { redirect_to @fight, notice: 'Fight was successfully created.' }
+        format.html { redirect_to @event , notice: 'Fight was successfully created.' }
         format.json { render :show, status: :created, location: @fight }
       else
         format.html { render :new }
@@ -66,6 +67,10 @@ class FightsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_fight
       @fight = Fight.find(params[:id])
+    end
+
+    def set_event
+      @event = Event.find(params[:event_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
