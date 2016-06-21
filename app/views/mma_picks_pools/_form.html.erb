@@ -1,0 +1,29 @@
+<%= form_for(@mma_picks_pool) do |f| %>
+  <% if @mma_picks_pool.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mma_picks_pool.errors.count, "error") %> prohibited this mma_picks_pool from being saved:</h2>
+
+      <ul>
+      <% @mma_picks_pool.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :expires %><br>
+    <%= f.date_select :expires, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label "pool owner" %><br>
+    <%= f.text_field :poolowner, class: "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

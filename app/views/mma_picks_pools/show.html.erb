@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @mma_picks_pool.name %>
+</p>
+
+<p>
+  <strong>Expires:</strong>
+  <%= @mma_picks_pool.expires %>
+</p>
+
+<p>
+  <strong>Poolowner:</strong>
+  <%= @mma_picks_pool.poolowner %>
+</p>
+
+<%= link_to 'Edit', edit_mma_picks_pool_path(@mma_picks_pool) %> |
+<%= link_to 'Back', mma_picks_pools_path %>

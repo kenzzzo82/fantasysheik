@@ -31,6 +31,10 @@
     <%= f.label :banner %><br>
     <%= f.file_field :banner, class: "form-control"%>
   </div>
+  <div class="form-group">
+    <%= f.label :current %>
+    <%= f.check_box  :current %>
+  </div>
   <div class="actions">
     <%= f.submit class: "btn btn-primary" %>
   </div>
