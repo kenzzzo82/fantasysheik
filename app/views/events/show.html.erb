@@ -1,3 +1,5 @@
+<div class="row">
+	<div class="col-md-6">
 <%= image_tag @event.banner_url %>
 <p>
   <strong>Name:</strong>
@@ -20,5 +22,18 @@
 </p>
 
 <%= link_to "Add a fight", new_event_fight_path(@event), class: "btn btn-primary" %>
+  </div>
+
+  <div class="col-md-4">
+<% @fights.each do |fight| %>
+  <p><Font size=4><%= fight.fighter1 %></font></p>
+  <p><b>VS.</b></p>
+  <p><Font size=4><%= fight.fighter2 %></Font></p>
+  <br><br>
+  <hr>
+  <br><br>
+  <% end %>
+ </div>
+ </div>
 <%= link_to 'Edit', edit_event_path(@event),class: "btn btn-link" %>
 <%= link_to 'Back', events_path,class: "btn btn-link" %>
