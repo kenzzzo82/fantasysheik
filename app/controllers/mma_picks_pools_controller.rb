@@ -1,5 +1,6 @@
 class MmaPicksPoolsController < ApplicationController
   before_action :set_mma_picks_pool, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /mma_picks_pools
   # GET /mma_picks_pools.json
@@ -25,6 +26,7 @@ class MmaPicksPoolsController < ApplicationController
   # POST /mma_picks_pools.json
   def create
     @mma_picks_pool = MmaPicksPool.new(mma_picks_pool_params)
+    @mma_picks_pool.poolowner = current_user.id
 
     respond_to do |format|
       if @mma_picks_pool.save
