@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+
+resources :mma_picks_pools do
   resources :mma_picks_accesses
-  resources :mma_picks_accesses
-  resources :mma_picks_pools
+end
+
   resources :fighters
 
   devise_for :users

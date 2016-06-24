@@ -1,5 +1,6 @@
 class MmaPicksAccessesController < ApplicationController
   before_action :set_mma_picks_access, only: [:show, :edit, :update, :destroy]
+  before_action :set_mma_picks_pool
 
   # GET /mma_picks_accesses
   # GET /mma_picks_accesses.json
@@ -25,6 +26,8 @@ class MmaPicksAccessesController < ApplicationController
   # POST /mma_picks_accesses.json
   def create
     @mma_picks_access = MmaPicksAccess.new(mma_picks_access_params)
+    @mma_picks_access.pool_id = @mma_picks_pool.id
+
 
     respond_to do |format|
       if @mma_picks_access.save
@@ -65,6 +68,10 @@ class MmaPicksAccessesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_mma_picks_access
       @mma_picks_access = MmaPicksAccess.find(params[:id])
+    end
+
+    def set_mma_picks_pool
+      @mma_picks_pool = MmaPicksPool.find(params[:pool_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
