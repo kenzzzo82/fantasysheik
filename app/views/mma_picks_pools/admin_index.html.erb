@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Mma Picks Pools</h1>
+
+<table class="table table-hover table-condensed">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Expires</th>
+      <th>Poolowner</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mma_picks_pools.each do |mma_picks_pool| %>
+      <tr>
+        <td><%= mma_picks_pool.name %></td>
+        <td><%= mma_picks_pool.expires %></td>
+        <td><%= mma_picks_pool.poolowner %></td>
+        <td><%= link_to 'Show', mma_picks_pool %></td>
+        <td><%= link_to 'Edit', edit_mma_picks_pool_path(mma_picks_pool) %></td>
+        <td><%= link_to 'Destroy', mma_picks_pool, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mma picks pool', new_mma_picks_pool_path, class: "btn btn-primary" %>

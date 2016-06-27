@@ -1,12 +1,11 @@
 class MmaPicksAccessesController < ApplicationController
   before_action :set_mma_picks_access, only: [:show, :edit, :update, :destroy]
   before_action :set_mma_picks_pool
+  before_action :authenticate_user!
+
 
   # GET /mma_picks_accesses
   # GET /mma_picks_accesses.json
-  def index
-    @mma_picks_accesses = MmaPicksAccess.all
-  end
 
   # GET /mma_picks_accesses/1
   # GET /mma_picks_accesses/1.json
@@ -27,11 +26,12 @@ class MmaPicksAccessesController < ApplicationController
   def create
     @mma_picks_access = MmaPicksAccess.new(mma_picks_access_params)
     @mma_picks_access.pool_id = @mma_picks_pool.id
+    @mma_picks_access.user_id = current_user.id
 
 
-    respond_to do |format|
+      respond_to do |format|
       if @mma_picks_access.save
-        format.html { redirect_to @mma_picks_access, notice: 'Mma picks access was successfully created.' }
+        format.html { redirect_to mma_picks_pool_mma_picks_access_url(@mma_picks_pool,@mma_picks_access), notice: 'Mma picks access was successfully created.' }
         format.json { render :show, status: :created, location: @mma_picks_access }
       else
         format.html { render :new }
@@ -71,7 +71,7 @@ class MmaPicksAccessesController < ApplicationController
     end
 
     def set_mma_picks_pool
-      @mma_picks_pool = MmaPicksPool.find(params[:pool_id])
+      @mma_picks_pool = MmaPicksPool.find(params[:mma_picks_pool_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

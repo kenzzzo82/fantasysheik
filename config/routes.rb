@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
 
+devise_for :users
 resources :mma_picks_pools do
   resources :mma_picks_accesses
 end
 
-  resources :fighters
 
-  devise_for :users
-  get 'pages/home'
+  #devise_for :users
+  #get 'pages/home'
 
 
   resources :events do
