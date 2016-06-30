@@ -1,4 +1,4 @@
-<%= form_for([@mma_picks_pool,@mma_picks_access]) do |f| %>
+<%= form_for([@mma_picks_pool, @mma_picks_access]) do |f| %>
   <% if @mma_picks_access.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@mma_picks_access.errors.count, "error") %> prohibited this mma_picks_access from being saved:</h2>

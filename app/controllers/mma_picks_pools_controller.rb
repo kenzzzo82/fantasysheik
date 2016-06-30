@@ -71,6 +71,6 @@ class MmaPicksPoolsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mma_picks_pool_params
-      params.require(:mma_picks_pool).permit(:name, :expires, :poolowner)
+      params.require(:mma_picks_pool).permit(:name, :expires, :poolowner, :userid)
     end
 end

@@ -76,6 +76,6 @@ class MmaPicksAccessesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mma_picks_access_params
-      params.fetch(:mma_picks_access, {})
+      params.fetch(:mma_picks_access, {}).permit(:user_id,:pool_id)
     end
 end
